@@ -1,0 +1,7 @@
+<section class="bg-white mat-elevation-z10" style="min-height: 80vh;">
+  <mat-tab-group routerTabs>
+    <mat-tab *ngFor="let link of navLinks" [routerLink]="link.path" [label]="link.label">
+    </mat-tab>
+  </mat-tab-group>
+  <router-outlet style="padding: 12px;"></router-outlet>
+</section>

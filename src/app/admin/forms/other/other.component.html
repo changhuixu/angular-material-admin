@@ -1,0 +1,174 @@
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="space-around stretch">
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Form field appearance variants</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Legacy form field</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="standard">
+          <mat-label>Standard form field</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Fill form field</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Outline form field</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Input with a custom ErrorStateMatcher</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <div class="example-container">
+        <form class="example-container" [formGroup]="options">
+          <mat-checkbox formControlName="hideRequired">Hide required marker</mat-checkbox>
+          <div>
+            <label>Float label: </label>
+            <mat-radio-group formControlName="floatLabel">
+              <mat-radio-button value="auto">Auto</mat-radio-button>
+              <mat-radio-button value="always">Always</mat-radio-button>
+              <mat-radio-button value="never">Never</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </form>
+
+        <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+          <input matInput placeholder="Simple placeholder" required>
+        </mat-form-field>
+
+        <mat-form-field [floatLabel]="options.value.floatLabel">
+          <mat-label>Both a label and a placeholder</mat-label>
+          <input matInput placeholder="Simple placeholder">
+        </mat-form-field>
+
+        <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+          <mat-select required>
+            <mat-option>-- None --</mat-option>
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+          <mat-label>
+            <mat-icon>favorite</mat-icon>
+            <b> Fancy</b>
+            <i> label</i>
+          </mat-label>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex="90" class="mb15">
+    <mat-card-header>
+      <mat-card-title>MFK</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="mfk">
+      <mat-form-field appearance="outline" floatLabel="always" style="width: 50px;">
+        <mat-label>Fund</mat-label>
+        <input matInput type="number" maxlength="3" placeholder="000" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" style="width: 40px;">
+        <mat-label>Org</mat-label>
+        <input matInput maxlength="2" placeholder="00">
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" style="width: 56px;">
+        <mat-label>Dept</mat-label>
+        <input matInput maxlength="4" placeholder="0000">
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" style="width: 60px;">
+        <mat-label>Subdept</mat-label>
+        <input matInput maxlength="5" placeholder="00000">
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" style="width: 90px;">
+        <mat-label>Grant/Pgm</mat-label>
+        <input matInput maxlength="8" placeholder="00000000">
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" style="width: 56px;">
+        <mat-label>Iact</mat-label>
+        <input matInput maxlength="4" placeholder="0000">
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" style="width: 60px;">
+        <mat-label>Dact</mat-label>
+        <input matInput maxlength="5" placeholder="00000">
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" style="width: 40px;">
+        <mat-label>Fn</mat-label>
+        <input matInput maxlength="2" placeholder="00">
+      </mat-form-field>
+      <mat-form-field appearance="outline" floatLabel="always" style="width: 56px;">
+        <mat-label>Cctr</mat-label>
+        <input matInput maxlength="4" placeholder="0000">
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Form field with hints or error messages</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <div class="example-container">
+        <mat-form-field hintLabel="Max 10 characters">
+          <input matInput #input maxlength="10" placeholder="Enter some input">
+          <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select placeholder="Select me">
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+          <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Enter your email" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Form field with prefix & suffix</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <div class="example-container">
+        <mat-form-field>
+          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Amount" type="number" class="example-right-align">
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>

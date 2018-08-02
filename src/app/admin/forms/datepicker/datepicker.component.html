@@ -1,0 +1,81 @@
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="space-around stretch">
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Basic datepicker</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Datepicker start date</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker2" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 startView="year" [startAt]="startDate"></mat-datepicker>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Year and month picker</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <mat-form-field>
+        <input matInput [matDatepicker]="dp" placeholder="Month and Year" [formControl]="date">
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp
+                        startView="multi-year"
+                        (yearSelected)="chosenYearHandler($event)"
+                        (monthSelected)="chosenMonthHandler($event, dp)"
+                        panelClass="example-month-picker">
+        </mat-datepicker>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-footer><p>Not yet completed</p></mat-card-footer>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Datepicker selected value</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <app-selected-value></app-selected-value>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Datepicker with min & max validation</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <mat-form-field class="example-full-width">
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="pickerv" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="pickerv"></mat-datepicker-toggle>
+        <mat-datepicker #pickerv></mat-datepicker>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Input Disabled</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <mat-form-field>
+        <input matInput [matDatepicker]="dp3" placeholder="Choose a date" readonly="true" (click)="dp3.open()">
+        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+</div>

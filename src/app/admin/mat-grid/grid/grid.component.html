@@ -1,0 +1,58 @@
+<div class="mb20" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start">
+  <mat-card fxFlex="100">
+    100%
+  </mat-card>
+</div>
+
+<div class="mb20" fxLayout="row" fxLayoutGap="20px">
+  <mat-card *ngFor="let i of [50, 50]" [fxFlex]="i">
+    {{i}}%
+  </mat-card>
+</div>
+
+<div class="mb20" fxLayout="row" fxLayoutGap="20px">
+  <mat-card *ngFor="let i of [33.33, 33.33, 33.33]" [fxFlex]="i">
+    {{i}}%
+  </mat-card>
+</div>
+
+<div class="mb20" fxLayout="row" fxLayoutGap="20px">
+  <mat-card *ngFor="let i of [25, 25, 25, 25]" [fxFlex]="i">
+    {{i}}%
+  </mat-card>
+</div>
+
+<div class="mb20" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%">
+  <mat-card *ngFor="let i of [12.5, 12.5, 12.5, 12.5, 12.5, 12.5, 12.5, 12.5]" [fxFlex]="i">
+    {{i}}%
+  </mat-card>
+</div>
+
+<div class="mb20" fxLayout="row wrap" fxLayout.xs="column">
+  <mat-card fxFlex="15">
+    15%
+  </mat-card>
+  <mat-card fxFlex="25">
+    25%
+  </mat-card>
+  <mat-card fxFlex="60">
+    60%
+  </mat-card>
+</div>
+
+<div class="mb20" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Sample Layout Page</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/images/sample-layout.png" alt="sample layout">
+    <mat-card-content>
+      <p>
+        Application Shell using Angular Flex Layout
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-flat-button routerLink="/sample-layout">Take a look!</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

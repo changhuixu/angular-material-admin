@@ -1,0 +1,35 @@
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="space-around stretch">
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Basic slider</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>
+
+      <mat-slider vertical></mat-slider>
+
+      <mat-slider thumbLabel tickInterval="1"></mat-slider>
+
+      <mat-slider step="5" tickInterval="1"></mat-slider>
+
+      <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" min="1" max="100000"></mat-slider>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Basic slide-toggles</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <p>
+        <mat-slide-toggle>Slide me!</mat-slide-toggle>
+      </p>
+      <p>
+        <mat-slide-toggle color="primary">Slide me!</mat-slide-toggle>
+      </p>
+      <p>
+        <mat-slide-toggle color="warning">Slide me!</mat-slide-toggle>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

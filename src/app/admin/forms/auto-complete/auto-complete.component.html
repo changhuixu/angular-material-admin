@@ -1,0 +1,57 @@
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="space-around stretch">
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Simple autocomplete</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="auto-field">
+      <mat-form-field>
+        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Display value autocomplete</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="auto-field">
+      <mat-form-field>
+        <input type="text" placeholder="Assignee" aria-label="Assignee" matInput [formControl]="myControl2" [matAutocomplete]="auto2">
+        <mat-autocomplete #auto2="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of filteredOptions2 | async" [value]="option">
+            {{option.name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Attaching the autocomplete panel</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="auto-field">
+      <div class="custom-wrapper-example" matAutocompleteOrigin #origin="matAutocompleteOrigin">
+        <input matInput placeholder="Pick one" [formControl]="myControl3" [matAutocomplete]="auto3" [matAutocompleteConnectedTo]="origin">
+      </div>
+
+      <mat-autocomplete #auto3="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
+      </mat-autocomplete>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Option groups</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="auto-field">
+      <app-states-group></app-states-group>
+    </mat-card-content>
+  </mat-card>
+</div>

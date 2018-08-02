@@ -1,0 +1,30 @@
+<div class="login-page">
+  <div class="content px20">
+    <form class="login-form" #myForm="ngForm" (ngSubmit)="onLogin()">
+      <div class="text-center">
+        <h2 class="app-name">Material Admin</h2>
+      </div>
+      <div fxLayout="row">
+        <div fxFlexFill>
+          <mat-form-field class="w-100">
+            <input matInput placeholder="Email">
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <input matInput type="password" placeholder="Password">
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between" fxLayout.xs="column" class="mt20 mb20">
+        <mat-checkbox color="primary" [ngStyle.xs]="{'margin-bottom.px': 10}">Remember Me</mat-checkbox>
+        <a href="javascript:void(0)">Forgot Password</a>
+      </div>
+      <div fxLayout="row">
+        <div fxFlexFill>
+          <button type="submit" mat-raised-button color="primary" class="w-100">Login</button>
+          <button type="button" mat-button color="primary" class="w-100" (click)="onLogin()">Sign Up</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

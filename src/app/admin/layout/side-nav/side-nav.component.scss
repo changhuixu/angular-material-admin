@@ -1,0 +1,34 @@
+@import '~src/scss/variables';
+.mat-nav-list {
+  width: 100%;
+  a {
+      .mat-icon {
+          margin-right: 15px;
+          color: $primary-color;
+      }
+      display: block;
+  }
+}
+.nested-menu {
+  .nested {
+      list-style-type: none;
+  }
+  .submenu {
+      display: none;
+      height: 0;
+  }
+  & .expand {
+      &.submenu {
+          display: block;
+          list-style-type: none;
+          height: auto;
+          margin: 0;
+          li {
+              a {
+                  padding: 10px;
+                  display: block;
+              }
+          }
+      }
+  }
+}
