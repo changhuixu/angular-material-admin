@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { UserData, DataService } from '../data.service';
 import { SelectionModel } from '@angular/cdk/collections';
 
@@ -13,8 +15,8 @@ export class TablesComponent implements OnInit, AfterViewInit {
   dataSource: MatTableDataSource<UserData>;
   selection: SelectionModel<UserData>;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor(private readonly dataService: DataService) {}
 
   ngOnInit() {

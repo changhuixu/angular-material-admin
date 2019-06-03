@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RouterTabModule } from '@zerohouse/router-tab';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -50,10 +50,11 @@ import { StepperOverviewComponent } from './steppers/stepper-overview/stepper-ov
 import { StepperVerticalComponent } from './steppers/stepper-vertical/stepper-vertical.component';
 import { BasicExpansionPanelComponent } from './panels/basic-expansion-panel/basic-expansion-panel.component';
 import { ExpansionPanelAccordionComponent } from './panels/expansion-panel-accordion/expansion-panel-accordion.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     MatComponentsRoutingModule,
@@ -80,7 +81,7 @@ import { ExpansionPanelAccordionComponent } from './panels/expansion-panel-accor
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    RouterTabModule
+    MatTabsModule
   ],
   declarations: [
     HomeComponent,

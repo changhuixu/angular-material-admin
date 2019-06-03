@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule as FormModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -13,9 +13,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
-import { MatIconModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { RouterTabModule } from '@zerohouse/router-tab';
 
 import { FormsRoutingModule } from './forms-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -30,7 +29,7 @@ import { SelectedValueComponent } from './datepicker/selected-value/selected-val
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     FormsRoutingModule,
     FormModule,
     ReactiveFormsModule,
@@ -48,8 +47,7 @@ import { SelectedValueComponent } from './datepicker/selected-value/selected-val
     MatFormFieldModule,
     MatSelectModule,
     MatSliderModule,
-    MatIconModule,
-    RouterTabModule
+    MatIconModule
   ],
   declarations: [
     HomeComponent,
