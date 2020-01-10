@@ -3,7 +3,6 @@
     src: url('assets/fonts/FontinSans/Fontin_Sans_R.otf') format('opentype');
 }
 
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import '~@angular/material/theming';
 
 $custom-typography: mat-typography-config(
