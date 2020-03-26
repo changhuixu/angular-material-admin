@@ -1,30 +1,18 @@
 <mat-nav-list>
-  <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/dashboard']">
-    <mat-icon class="sidenav-icon">dashboard</mat-icon>Dashboard
-  </a>
-  <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/charts']">
-    <mat-icon class="sidenav-icon">bar_chart</mat-icon>Charts
-  </a>
-  <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/tables']">
-    <mat-icon class="sidenav-icon">table_chart</mat-icon>Tables
-  </a>
-  <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/forms']">
-    <mat-icon class="sidenav-icon">assignment</mat-icon>Forms
-  </a>
-  <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/mat-grid']">
-    <mat-icon class="sidenav-icon">grid_on</mat-icon>Flex Grid
-  </a>
-  <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/mat-components']">
-    <mat-icon class="sidenav-icon">code</mat-icon>Material Components
-  </a>
-  <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/animations']">
-    <mat-icon class="sidenav-icon">perm_media</mat-icon>Animations
+  <a
+    *ngFor="let item of routes"
+    mat-list-item
+    [routerLinkActive]="'active'"
+    [routerLink]="['/', item.path]"
+  >
+    <mat-icon class="sidenav-icon">{{ item.data.icon }}</mat-icon>
+    {{ item.data.text }}
   </a>
   <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/blank-page']">
     <mat-icon class="sidenav-icon">insert_drive_file</mat-icon>Blank Page
   </a>
   <div class="nested-menu">
-    <a mat-list-item (click)="showMenu=!showMenu">
+    <a mat-list-item (click)="showMenu = !showMenu">
       <mat-icon class="sidenav-icon">add</mat-icon>Menu
     </a>
     <ul class="nested submenu" [class.expand]="showMenu">

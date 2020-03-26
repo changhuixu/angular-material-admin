@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { childRoutes } from '../../child-routes';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
   showMenu = false;
+  routes = childRoutes;
   constructor() {}
 
   ngOnInit() {}

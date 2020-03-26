@@ -1,0 +1,30 @@
+<div>
+  Not using a valid API key, so this google-map page won't work, as expected.
+</div>
+<br>
+
+<google-map
+  height="400px"
+  width="750px"
+  [center]="center"
+  [zoom]="zoom"
+  (mapClick)="addMarker($event)"
+  (mapMousemove)="move($event)"
+  (mapRightclick)="removeLastMarker()"
+>
+  <map-marker
+    #marker
+    *ngFor="let markerPosition of markerPositions"
+    [position]="markerPosition"
+    [options]="markerOptions"
+    (mapClick)="openInfoWindow(marker)"
+  ></map-marker>
+  <map-info-window>Info Window content</map-info-window>
+</google-map>
+
+<div>Latitude: {{ display?.lat }}</div>
+<div>Longitude: {{ display?.lng }}</div>
+
+<div>
+  Not using a valid API key, so this google-map page won't work, as expected.
+</div>
