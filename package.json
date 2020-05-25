@@ -1,5 +1,5 @@
 {
-  "name": "angular-material-admin",
+  "name": "",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -39,5 +39,17 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.7.5"
-  }
+  },
+  "description": "## [Demo](https://angular-material-admin.firebaseapp.com)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tungtran309/admin-tools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tungtran309/admin-tools/issues"
+  },
+  "homepage": "https://github.com/tungtran309/admin-tools#readme"
 }
