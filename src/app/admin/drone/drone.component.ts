@@ -7,11 +7,12 @@ import { SelectionModel } from '@angular/cdk/collections';
 
 export interface DroneData {
     id : number;
-    name : string;
-    age : number;
-    gender : string;
-    department : string;
-    occupation : string;
+    model : string;
+    height : string;
+    weight : string;
+    battery : string;
+    flight_time : string;
+    speed : string;
 }
 
 @Component({
@@ -22,7 +23,7 @@ export interface DroneData {
 
 
 export class DroneComponent implements OnInit, AfterViewInit {
-  displayedColumns = ['select', 'id', 'name', 'age', 'gender', 'department', 'occupation'];
+  displayedColumns = ['select', 'id', 'model', 'height', 'weight', 'battery', 'flight_time', 'speed'];
   dataSource: Array<DroneData>;
   dataTable : Array<DroneData>
   selection: SelectionModel<DroneData>;
@@ -34,28 +35,22 @@ export class DroneComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.selection = new SelectionModel<DroneData>(true, []);
-    this.dataSource = [{id : 1, name : 'Nguyễn Văn A', age : 25, gender : "Nam", department : "Hai Bà Trưng", occupation : "Quản trị viên"}
-                      ,{id : 2, name : 'Hoàng Thị B', age : 26, gender : "Nữ", department : "Ba Đình", occupation : "Quản trị viên"}
-                      ,{id : 3, name : 'Nguyễn Văn C', age : 25, gender : "Nam", department : "Hai Bà Trưng", occupation : "Thợ điện"}
-                      ,{id : 4, name : 'Trần Văn D', age : 34, gender : "Nam", department : "Hai Bà Trưng", occupation : "Thợ điện"}
-                      ,{id : 5, name : 'Nguyễn Thị E', gender : "Nữ", age : 30, department : "Ba Đình", occupation : "Thợ điện"}
-                      ,{id : 6, name : 'Lê Văn G', age : 37, gender : "Nam", department : "Ba Đình", occupation : "Phân tích viên"}
-                      ,{id : 7, name : 'Lê Thị H', age : 40, gender : "Nữ", department : "Hai Bà Trưng", occupation : "Thợ điện"}
-                      ,{id : 8, name : 'Bùi Văn P', age : 41, gender : "Nam", department : "Ba Đình", occupation : "Phân tích viên"}
-                      ,{id : 9, name : 'Võ Văn Z', age : 45, gender : "Nam", department : "Hai Bà Trưng", occupation : "Phân tích viên"}
-                      ,{id : 10, name : 'Trần Xuân T', age : 21,  gender : "Nam",department : "Ba Đình", occupation : "Thợ điện"}
-                      ,{id : 11, name : 'Chu Đình N', age : 23, gender : "Nam", department : "Hai Bà Trưng", occupation : "Phân tích viên"}
-                      ,{id : 12, name : 'Phạm Văn M', age : 31, gender : "Nam", department : "Ba Đình", occupation : "Thợ điện"}
-                      ,{id : 13, name : 'Lê Văn X', age : 27, gender : "Nam", department : "Hai Bà Trưng", occupation : "Thợ điện"}
-                      ,{id : 14, name : 'Nguyễn Thị Y', age : 26, gender : "Nữ", department : "Ba Đình", occupation : "Thợ điện"}
-                      ,{id : 15, name : 'Nguyễn Văn Z', age : 22, gender : "Nam", department : "Hai Bà Trưng", occupation : "Thợ điện"}
-                      ,{id : 16, name : 'Cao Thị E', gender : "Nữ", age : 28, department : "Hai Bà Trưng", occupation : "Quản trị viên"}];
+    this.dataSource = [
+      {id : 1, model : 'Intel Aero 4', height : '200 mm', weight : '1000g', battery : '4000 mAh', flight_time : '20 min', speed : '15 m/s'},
+      {id : 2, model : 'Intel Aero 4', height : '200 mm', weight : '1000g', battery : '4000 mAh', flight_time : '20 min', speed : '15 m/s'},
+      {id : 3, model : 'Intel Aero 4', height : '200 mm', weight : '1000g', battery : '4000 mAh', flight_time : '20 min', speed : '15 m/s'},
+      {id : 4, model : 'Intel Aero 4', height : '200 mm', weight : '1000g', battery : '4000 mAh', flight_time : '20 min', speed : '15 m/s'},
+      {id : 5, model : 'Intel Aero 4', height : '200 mm', weight : '1000g', battery : '4000 mAh', flight_time : '20 min', speed : '15 m/s'},
+      {id : 6, model : 'Intel Aero 4', height : '200 mm', weight : '1000g', battery : '4000 mAh', flight_time : '20 min', speed : '15 m/s'},
+      {id : 7, model : 'Intel Aero 4', height : '200 mm', weight : '1000g', battery : '4000 mAh', flight_time : '20 min', speed : '15 m/s'},
+      {id : 8, model : 'Intel Aero 4', height : '200 mm', weight : '1000g', battery : '4000 mAh', flight_time : '20 min', speed : '15 m/s'},
+      //{}
+    ];
     this.dataTable = this.dataSource;
-    this.droneSearch = {id : 0, name : "", age : 0, gender : "", department : "", occupation : ""};
+    this.droneSearch = {id : 0, model : '', height : '', weight : '', battery : '', flight_time : '', speed : ''};
   }
 
   ngAfterViewInit() {
-    // this.dataSource = [{name : 'Nguyễn Văn A', age : 30}, {name : 'Nguyễn Văn B', age : 25}];
   }
 
   applyFilter() {
@@ -63,13 +58,7 @@ export class DroneComponent implements OnInit, AfterViewInit {
     this.dataTable = [];
     for (var row of this.dataSource) {
         let isMatched : boolean = true;
-        if (!row.name.includes(this.droneSearch.name) && this.droneSearch.name != "") {
-            isMatched = false;
-        }
-        if (!row.department.includes(this.droneSearch.department) && this.droneSearch.department != "") {
-          isMatched = false;
-        }
-        if (!row.occupation.includes(this.droneSearch.occupation) && this.droneSearch.occupation != "") {
+        if (!row.model.includes(this.droneSearch.model) && this.droneSearch.model != "") {
             isMatched = false;
         }
         if (isMatched) {
