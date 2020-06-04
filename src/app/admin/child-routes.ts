@@ -8,7 +8,7 @@ export const childRoutes = [
   {
     path: 'drone',
     loadChildren: () =>
-      import('./charts/charts.module').then(m => m.ChartsModule),
+      import('./drone/drone.module').then(m => m.DroneModule),
     data: { icon: 'flight', text: 'Quản lý drone' }
   },
   {
