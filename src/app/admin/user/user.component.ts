@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
+import { MatDialog } from '@angular/material/dialog';
+import { UserAddDialog } from './user-add/userAdd.component';
 
 
 export interface UserData {
@@ -30,7 +31,21 @@ export class UserComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(UserAddDialog, {
+      width: '540px',
+      height: '360px',
+      data : {id : "", name : "", age : "", gender: "", department : "", occupation : ""}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+        result.id = this.dataSource[this.dataSource.length - 1].id + 1;
+        this.dataSource.push(result);
+        this.applyFilter();
+    });
+  }
 
   ngOnInit() {
     this.selection = new SelectionModel<UserData>(true, []);
@@ -55,7 +70,7 @@ export class UserComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // this.dataSource = [{name : 'Nguyễn Văn A', age : 30}, {name : 'Nguyễn Văn B', age : 25}];
+    
   }
 
   applyFilter() {

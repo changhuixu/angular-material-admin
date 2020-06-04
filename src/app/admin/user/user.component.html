@@ -1,16 +1,19 @@
 <section id="sample-table" class="mat-elevation-z8 bg-white">
-  <mat-form-field class="seach-form">
+  <mat-form-field class="search-form">
     <mat-label>Tên</mat-label>
     <input matInput (keyup)="applyFilter()" [(ngModel)]='userSearch.name' placeholder="Nhập tên">
   </mat-form-field>
-  <mat-form-field class="seach-form">
+  <mat-form-field class="search-form">
     <mat-label>Chi nhánh</mat-label>
     <input matInput (keyup)="applyFilter()" [(ngModel)]='userSearch.department' placeholder="Nhập chi nhánh">
   </mat-form-field>
-  <mat-form-field class="seach-form">
+  <mat-form-field class="search-form">
     <mat-label>Chức vụ</mat-label>
     <input matInput (keyup)="applyFilter()" [(ngModel)]='userSearch.occupation' placeholder="Nhập chức vụ">
   </mat-form-field>
+  <div>
+  <button mat-raised-button class="search-form" color="primary" (click)="openDialog()">Add User</button>
+  </div>
   <table mat-table [dataSource]="dataTable" matSort class="w-100">
     <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>
@@ -55,6 +58,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
   </table>
-
   <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </section>

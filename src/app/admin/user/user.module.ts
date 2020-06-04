@@ -9,6 +9,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { UserComponent } from './user.component';
 import { UsersRoutingModule } from './user-routing.module';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { UserAddDialog } from './user-add/userAdd.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -18,10 +22,14 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDialogModule,
     MatInputModule,
+    MatButtonModule,
     MatCheckboxModule,
+    MatFormFieldModule,
+    MatSelectModule,
     FormsModule
   ],
-  declarations: [UserComponent]
+  declarations: [UserComponent, UserAddDialog]
 })
 export class UserModule {}
