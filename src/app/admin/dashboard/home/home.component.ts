@@ -4,7 +4,7 @@ interface Place {
   imgSrc: string;
   name: string;
   description: string;
-  charge: string;
+  date: string;
   location: string;
 }
 
@@ -19,29 +19,27 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.places = [
       {
-        imgSrc: 'assets/images/card-1.jpg',
-        name: 'Cozy 5 Stars Apartment',
-        description: `The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio"
-              where you can enjoy the main night life in Barcelona.`,
-        charge: '$899/night',
-        location: 'Barcelona, Spain'
+        imgSrc: 'assets/images/incident1.jpeg',
+        name: 'Cột điện hỏng',
+        description: `Sét đánh vào đường điện cao thế`,
+        date: '12/05/2020',
+        location: 'Hai Bà Trưng, Hà Nội'
       },
       {
-        imgSrc: 'assets/images/card-2.jpg',
-        name: 'Office Studio',
-        description: `The place is close to Metro Station and bus stop just 2 min by walk and near to "Naviglio"
-              where you can enjoy the night life in London, UK.`,
-        charge: '$1,119/night',
-        location: 'London, UK'
+        imgSrc: 'assets/images/incident2.jpg',
+        name: 'Đổ cột điện',
+        description: `Cột điện ở đường quốc lộ bị đổ`,
+        date: '13/05/2020',
+        location: 'Sơn Tây, Hà Nội'
       },
       {
-        imgSrc: 'assets/images/card-3.jpg',
-        name: 'Beautiful Castle',
-        description: `The place is close to Metro Station and bus stop just 2 min by walk and near to "Naviglio"
-              where you can enjoy the main night life in Milan.`,
-        charge: '$459/night',
-        location: 'Milan, Italy'
+        imgSrc: 'assets/images/incident3.jpg',
+        name: 'Đứt dây điện',
+        description: `Dây điện trong khu dân cư bị đứt`,
+        date: '13/05/2020',
+        location: 'Ba Đình, Hà Nội'
       }
     ];
   }
+
 }

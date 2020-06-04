@@ -3,30 +3,30 @@ export const childRoutes = [
     path: 'dashboard',
     loadChildren: () =>
       import('./dashboard/dashboard.module').then(m => m.DashboardModule),
-    data: { icon: 'dashboard', text: 'Home' }
+    data: { icon: 'home', text: 'Tổng quan' }
   },
   {
-    path: 'statistic',
+    path: 'drone',
     loadChildren: () =>
       import('./charts/charts.module').then(m => m.ChartsModule),
-    data: { icon: 'bar_chart', text: 'Statistic' }
+    data: { icon: 'flight', text: 'Quản lý drone' }
   },
   {
     path: 'user',
     loadChildren: () =>
       import('./tables/tables.module').then(m => m.TablesModule),
-    data: { icon: 'table_chart', text: 'User' }
+    data: { icon: 'account_box', text: 'Quản lý người dùng' }
   },
   {
-    path: 'drone',
+    path: 'assignment',
     loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule),
-    data: { icon: 'assignment', text: 'Drone' }
+    data: { icon: 'assignment', text: 'Quản lý công việc' }
   },
   {
-    path: 'history',
+    path: 'image',
     loadChildren: () =>
       import('./mat-grid/mat-grid.module').then(m => m.MatGridModule),
-    data: { icon: 'grid_on', text: 'History' }
+    data: { icon: 'image', text: 'Quản lý ảnh chụp' }
   }//,
   // {
   //   path: 'material',
