@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Thêm người dùng</h1>
+<mat-form-field class="add-form">
+  <mat-label>Tên người dùng</mat-label>
+  <input matInput [(ngModel)]="data.name">
+</mat-form-field>
+
+<mat-form-field class="add-form">
+  <mat-label>Tuổi</mat-label>
+  <input matInput [(ngModel)]="data.age">
+</mat-form-field>
+
+<mat-form-field class="add-form">
+  <mat-label>Giới tính</mat-label>
+  <mat-select [(value)]="data.gender">
+    <mat-option value="Nam">Nam</mat-option>
+    <mat-option value="Nữ">Nữ</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="add-form">
+  <mat-label>Chi nhánh</mat-label>
+  <input matInput [(ngModel)]="data.department">
+</mat-form-field>
+
+<mat-form-field class="add-form">
+  <mat-label>Chức vụ</mat-label>
+  <input matInput [(ngModel)]="data.occupation">
+</mat-form-field>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
