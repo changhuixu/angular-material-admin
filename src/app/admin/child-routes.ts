@@ -14,7 +14,7 @@ export const childRoutes = [
   {
     path: 'user',
     loadChildren: () =>
-      import('./tables/tables.module').then(m => m.TablesModule),
+      import('./user/user.module').then(m => m.UserModule),
     data: { icon: 'account_box', text: 'Quản lý người dùng' }
   },
   {

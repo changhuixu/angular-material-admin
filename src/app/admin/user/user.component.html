@@ -1,0 +1,60 @@
+<section id="sample-table" class="mat-elevation-z8 bg-white">
+  <mat-form-field class="seach-form">
+    <mat-label>Tên</mat-label>
+    <input matInput (keyup)="applyFilter()" [(ngModel)]='userSearch.name' placeholder="Nhập tên">
+  </mat-form-field>
+  <mat-form-field class="seach-form">
+    <mat-label>Chi nhánh</mat-label>
+    <input matInput (keyup)="applyFilter()" [(ngModel)]='userSearch.department' placeholder="Nhập chi nhánh">
+  </mat-form-field>
+  <mat-form-field class="seach-form">
+    <mat-label>Chức vụ</mat-label>
+    <input matInput (keyup)="applyFilter()" [(ngModel)]='userSearch.occupation' placeholder="Nhập chức vụ">
+  </mat-form-field>
+  <table mat-table [dataSource]="dataTable" matSort class="w-100">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tên </th>
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tuổi </th>
+      <td mat-cell *matCellDef="let row"> {{row.age}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Giới tính </th>
+      <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="department">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Chi Nhánh </th>
+      <td mat-cell *matCellDef="let row"> {{row.department}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="occupation">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Chức vụ </th>
+      <td mat-cell *matCellDef="let row"> {{row.occupation}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+  </table>
+
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</section>
