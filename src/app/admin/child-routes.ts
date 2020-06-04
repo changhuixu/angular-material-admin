@@ -19,7 +19,7 @@ export const childRoutes = [
   },
   {
     path: 'assignment',
-    loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule),
+    loadChildren: () => import('./assignment/assignment.module').then(m => m.AssignmentModule),
     data: { icon: 'assignment', text: 'Quản lý công việc' }
   },
   {
