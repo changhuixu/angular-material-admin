@@ -3,7 +3,15 @@
     <mat-card-title>Bar Chart</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
-      [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    <canvas
+      baseChart
+      type="bar"
+      width="500"
+      height="200"
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"
+    ></canvas>
   </mat-card-content>
 </mat-card>

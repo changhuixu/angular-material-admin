@@ -4,7 +4,7 @@
 
 ## [Demo](https://angular-material-admin.firebaseapp.com)
 
-[![Build Status](https://img.shields.io/travis/changhuixu/angular-material-admin/master.svg?label=Travis%20CI&style=flat-square)](https://travis-ci.org/changhuixu/angular-material-admin)
+[![Build Status](https://img.shields.io/travis/changhuixu/angular-material-admin/master.svg?label=Travis%20CI&style=flat-square)](https://app.travis-ci.com/changhuixu/angular-material-admin.svg?branch=main)
 
 ![Dashboard Screenshot](./img/dashboard.png)
 

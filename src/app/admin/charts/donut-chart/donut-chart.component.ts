@@ -3,15 +3,22 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-donut-chart',
   templateUrl: './donut-chart.component.html',
-  styleUrls: ['./donut-chart.component.scss']
+  styleUrls: ['./donut-chart.component.scss'],
 })
 export class DonutChartComponent implements OnInit {
-  doughnutChartLabels: string[] = [
-    'Download Sales',
-    'In-Store Sales',
-    'Mail-Order Sales'
-  ];
-  doughnutChartData = [350, 450, 100];
+  doughnutChartData = {
+    labels: ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'],
+    datasets: [
+      {
+        data: [350, 450, 100],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+        ],
+      },
+    ],
+  };
   doughnutChartType = 'doughnut';
 
   constructor() {}

@@ -3,11 +3,23 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.scss']
+  styleUrls: ['./pie-chart.component.scss'],
 })
 export class PieChartComponent implements OnInit {
-  pieChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
-  pieChartData: number[] = [300, 500, 100];
+  pieChartData = {
+    labels: ['Download Sales', 'In-Store Sales', 'Mail Sales'],
+    datasets: [
+      {
+        label: 'Sales',
+        data: [300, 500, 100],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+        ],
+      },
+    ],
+  };
   pieChartType = 'pie';
   constructor() {}
 

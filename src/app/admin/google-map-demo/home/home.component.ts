@@ -4,7 +4,7 @@ import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow;
@@ -19,11 +19,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addMarker(event: google.maps.MouseEvent) {
+  addMarker(event: google.maps.MapMouseEvent) {
     this.markerPositions.push(event.latLng.toJSON());
   }
 
-  move(event: google.maps.MouseEvent) {
+  move(event: google.maps.MapMouseEvent) {
     this.display = event.latLng.toJSON();
   }
 
