@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-stepper-vertical',
+  standalone:false,
   templateUrl: './stepper-vertical.component.html',
   styleUrls: ['./stepper-vertical.component.scss']
 })

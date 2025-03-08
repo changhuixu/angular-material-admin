@@ -9,6 +9,7 @@ interface User {
 
 @Component({
   selector: 'app-auto-complete',
+  standalone:false,
   templateUrl: './auto-complete.component.html',
   styleUrls: ['./auto-complete.component.scss']
 })

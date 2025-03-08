@@ -7,6 +7,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-tables',
+  standalone:false,
   templateUrl: './tables.component.html',
   styleUrls: ['./tables.component.scss']
 })

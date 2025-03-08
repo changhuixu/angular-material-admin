@@ -11,7 +11,8 @@ import { NavigationEnd, Router } from '@angular/router';
 import { RouterTab } from './router-tab.directive';
 
 @Directive({
-  selector: '[routerTabs]'
+  selector: '[routerTabs]',
+  standalone:false
 })
 export class RouterTabs implements AfterContentInit, OnDestroy {
   subscription = new Subscription();

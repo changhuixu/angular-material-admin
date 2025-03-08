@@ -1,4 +1,4 @@
-:host ::ng-deep .mat-card-header-text {
+.mat-card-header-text {
   width: 100%;
   text-align: right;
 }
@@ -7,7 +7,7 @@
   font-size: 40px;
 }
 
-.mat-card {
+ mat-card {
   color: #fff;
   .mat-card-header {
     width: 100%;

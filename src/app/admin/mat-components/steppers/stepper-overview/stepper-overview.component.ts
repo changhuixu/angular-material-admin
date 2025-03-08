@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-stepper-overview',
+  standalone:false,
   templateUrl: './stepper-overview.component.html',
   styleUrls: ['./stepper-overview.component.scss']
 })

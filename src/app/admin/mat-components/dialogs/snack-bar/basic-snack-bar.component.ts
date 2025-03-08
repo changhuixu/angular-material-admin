@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-basic-snack-bar',
+  standalone:false,
   template: `
 <mat-form-field>
   <input matInput value="Disco party!" placeholder="Message" #message>

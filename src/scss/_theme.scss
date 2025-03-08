@@ -1,11 +1,5 @@
 @use '@angular/material' as mat;
-@import '@angular/material/theming';
-@include mat.core();
-$primary: mat.define-palette(mat.$blue-palette, 700);
-$accent: mat.define-palette(mat.$orange-palette, 700);
-$theme: mat.define-light-theme($primary, $accent);
-@include mat.all-component-themes($theme);
 
-
-
+@include mat.elevation-classes();
+@include mat.app-background();
 

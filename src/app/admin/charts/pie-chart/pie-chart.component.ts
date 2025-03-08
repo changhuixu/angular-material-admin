@@ -1,26 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { MatCardModule } from "@angular/material/card";
+import { BaseChartDirective } from "ng2-charts";
 
 @Component({
-  selector: 'app-pie-chart',
-  templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.scss'],
+  selector: "app-pie-chart",
+  standalone: true,
+  imports: [MatCardModule, BaseChartDirective],
+  templateUrl: "./pie-chart.component.html",
+  styleUrls: ["./pie-chart.component.scss"],
 })
 export class PieChartComponent implements OnInit {
   pieChartData = {
-    labels: ['Download Sales', 'In-Store Sales', 'Mail Sales'],
+    labels: ["Download Sales", "In-Store Sales", "Mail Sales"],
     datasets: [
       {
-        label: 'Sales',
+        label: "Sales",
         data: [300, 500, 100],
         backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)',
+          "rgb(255, 99, 132)",
+          "rgb(54, 162, 235)",
+          "rgb(255, 205, 86)",
         ],
       },
     ],
   };
-  pieChartType = 'pie';
+  pieChartType = "pie";
   constructor() {}
 
   ngOnInit() {}

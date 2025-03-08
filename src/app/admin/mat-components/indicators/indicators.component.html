@@ -31,12 +31,12 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-chip-list>
+      <mat-chip-set>
         <mat-chip>One fish</mat-chip>
         <mat-chip>Two fish</mat-chip>
         <mat-chip color="primary" selected>Primary fish</mat-chip>
         <mat-chip color="accent" selected>Accent fish</mat-chip>
-      </mat-chip-list>
+      </mat-chip-set>
     </mat-card-content>
   </mat-card>
 
@@ -49,26 +49,28 @@
     </mat-card-header>
     <mat-card-content>
       <mat-form-field class="w-100">
-        <mat-chip-list #chipList>
-          <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable" (removed)="remove(fruit)">
-            {{fruit.name}}
-            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-          </mat-chip>
-          <input placeholder="New fruit..." [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
-            (matChipInputTokenEnd)="add($event)">
-        </mat-chip-list>
+        <mat-chip-grid #chipGrid>
+          @for (fruit of fruits; track fruit) {
+            <mat-chip-row
+              (removed)="remove(fruit)"
+              [removable]="true"
+              [aria-description]="'press enter to edit ' + fruit.name"
+            >
+              {{fruit.name}}
+              <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+          }
+          <input
+            placeholder="New fruit..."
+            [matChipInputFor]="chipGrid"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="add($event)"
+          />
+        </mat-chip-grid>
       </mat-form-field>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card fxFlex.gt-xs="45" class="mb15">
-    <mat-card-header>
-      <mat-card-title>
-        <h3>Chips with input</h3>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <app-chips-auto-complete></app-chips-auto-complete>
     </mat-card-content>
   </mat-card>
 

@@ -14,10 +14,6 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: '',
-        redirectTo: 'buttons'
-      },
-      {
         path: 'buttons',
         component: ButtonsComponent
       },
@@ -40,6 +36,11 @@ const routes: Routes = [
       {
         path: 'others',
         component: OthersComponent
+      },
+      {
+        path: '',
+        redirectTo: 'buttons',
+        pathMatch:'full'
       }
     ]
   }

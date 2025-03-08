@@ -8,7 +8,8 @@
       type="polarArea"
       width="500"
       height="200"
-      [data]="polarAreaChartData"
+      [datasets]="datasets"
+      [labels]="labels"
       (chartHover)="chartHovered($event)"
       (chartClick)="chartClicked($event)"
     ></canvas>

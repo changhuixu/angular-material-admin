@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from 'src/app/shared/shared.module';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -54,11 +52,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
     imports: [
-        SharedModule,
         FormsModule,
         ReactiveFormsModule,
         MatComponentsRoutingModule,
-        FlexLayoutModule,
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,

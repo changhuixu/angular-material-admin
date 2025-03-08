@@ -5,6 +5,7 @@ class NavLink {
 
 @Component({
   templateUrl: './home.component.html',
+  standalone:false,
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {

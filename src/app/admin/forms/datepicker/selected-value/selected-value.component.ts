@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-selected-value',
+  standalone:false,
   templateUrl: './selected-value.component.html',
   styleUrls: ['./selected-value.component.scss']
 })

@@ -1,4 +1,4 @@
-@import 'src/scss/variables';
+@use 'src/scss/variables' as *;
 .layout-container {
   display: flex;
   flex-direction: column;

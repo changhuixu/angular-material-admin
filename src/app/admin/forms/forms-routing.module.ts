@@ -14,10 +14,6 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: '',
-        redirectTo: 'autocomplete'
-      },
-      {
         path: 'autocomplete',
         component: AutoCompleteComponent
       },
@@ -42,9 +38,10 @@ const routes: Routes = [
         component: OtherComponent
       },
       {
-        path: '**',
-        redirectTo: 'autocomplete'
-      }
+        path: '',
+        redirectTo: 'autocomplete',
+        pathMatch:'full'
+      },
     ]
   }
 ];

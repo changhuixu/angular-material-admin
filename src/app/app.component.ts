@@ -1,8 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { SettingsService } from './core/bootstrap/settings.service';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `<router-outlet />`,
+  imports: [RouterOutlet],
 })
-export class AppComponent {}
+export class AppComponent implements OnInit  {
+
+  private readonly settings = inject(SettingsService);
+
+  ngOnInit() {
+    this.settings.setDirection();
+    this.settings.setTheme();
+  }
+}

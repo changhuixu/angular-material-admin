@@ -4,6 +4,7 @@ import { MatDatepicker } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-datepicker',
+  standalone:false,
   templateUrl: './datepicker.component.html',
   styleUrls: ['./datepicker.component.scss']
 })

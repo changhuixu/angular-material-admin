@@ -8,6 +8,7 @@ interface DialogData {
 
 @Component({
   selector: 'app-dialog-overview',
+  standalone:false,
   template: `
 <ol>
   <li>
@@ -45,6 +46,7 @@ export class DialogOverviewComponent {
 }
 
 @Component({
+  standalone:false,
   template: `
 <h1 mat-dialog-title>Hi {{data.name}}</h1>
 <div mat-dialog-content>

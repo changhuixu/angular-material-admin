@@ -33,6 +33,7 @@ class MyErrorStateMatcher implements ErrorStateMatcher {
 
 @Component({
   selector: 'app-checkbox',
+  standalone:false,
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss']
 })
@@ -46,7 +47,7 @@ export class CheckboxComponent implements OnInit {
     { value: 'tacos-2', viewValue: 'Tacos' }
   ];
 
-  animalControl = new FormControl('', [Validators.required]);
+  animalControl = new FormControl({} as Animal, [Validators.required]);
   animals: Animal[] = [
     { name: 'Dog', sound: 'Woof!' },
     { name: 'Cat', sound: 'Meow!' },

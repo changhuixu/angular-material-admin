@@ -8,12 +8,12 @@ interface Fruit {
 
 @Component({
   selector: 'app-indicators',
+  standalone:false,
   templateUrl: './indicators.component.html',
   styleUrls: ['./indicators.component.scss']
 })
 export class IndicatorsComponent implements OnInit {
   visible = true;
-  selectable = true;
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];

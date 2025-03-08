@@ -1,0 +1,24 @@
+/* Replaces fxLayout="row wrap" */
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch; /* Matches fxLayoutAlign="space-between stretch" */
+    gap: 15px; /* Replaces fxLayoutGap */
+  }
+  
+  /* Replaces fxFlex.gt-sm="49" */
+  .chart-item {
+    width: calc(50% - 15px); /* 49% width with gap handling */
+  }
+  
+  @media (max-width: 768px) { /* Matches fxLayout.lt-md="column" */
+    .chart-container {
+      flex-direction: column;
+    }
+  
+    .chart-item {
+      width: 100%;
+    }
+  }
+  

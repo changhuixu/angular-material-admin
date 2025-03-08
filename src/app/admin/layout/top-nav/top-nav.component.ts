@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-nav',
+  standalone:false,
   templateUrl: './top-nav.component.html',
   styleUrls: ['./top-nav.component.scss']
 })
