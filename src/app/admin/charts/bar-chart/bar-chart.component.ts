@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-bar-chart',
+  standalone:true,
+    imports: [MatCardModule, BaseChartDirective],
+  
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.scss'],
 })

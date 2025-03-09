@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
+  standalone:false,
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })

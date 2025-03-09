@@ -42,12 +42,4 @@ export const childRoutes = [
       import('./animations/animations.module').then(m => m.AnimationsModule),
     data: { icon: 'perm_media', text: 'Animations' }
   },
-  {
-    path: 'google-maps',
-    loadChildren: () =>
-      import('./google-map-demo/google-map-demo.module').then(
-        m => m.GoogleMapDemoModule
-      ),
-    data: { icon: 'place', text: 'Google Maps' }
-  }
 ];

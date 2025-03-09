@@ -1,7 +1,100 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+  gap: 20px; /* Default gap */
+}
 .example-card {
   max-width: 400px;
+  padding: 0;
 }
 
+/* Base Row Container */
+.row-container {
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  mat-card {
+    padding: 16px;
+    align-items: center;
+  }
+}
 
+.gap-05 {
+  gap: 0.5%;
+}
 
+/* Full-Width Card */
+.full-width-card {
+  width: 100%;
+}
 
+/* Two 50% Cards */
+.half-width-card {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  max-width: 50%;
+  &.half-width-card:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+/* Three 33.33% Cards */
+.third-width-card {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  max-width: 33.33%;
+  &.third-width-card:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+/* Four 25% Cards */
+.quarter-width-card {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  max-width: 25%;
+  &.quarter-width-card:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+/* Eight 12.5% Cards */
+.small-width-card {
+  flex: 1 1 100%;
+  box-sizing: border-box;
+  max-width: 12.5%;
+  &.small-width-card:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+/* Specific Width Cards */
+.fifteen-width-card {
+  width: 15%;
+}
+.twenty-five-width-card {
+  width: 25%;
+}
+.sixty-width-card {
+  width: 60%;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .row-container {
+    flex-direction: column;
+  }
+
+  .half-width-card,
+  .third-width-card,
+  .quarter-width-card,
+  .small-width-card,
+  .fifteen-width-card,
+  .twenty-five-width-card,
+  .sixty-width-card {
+    width: 100%;
+  }
+}

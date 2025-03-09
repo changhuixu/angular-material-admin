@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-snack-bar',
+  standalone:false,
   template: `
 <button mat-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
   Pizza party
@@ -24,6 +25,7 @@ export class SnackBarComponent {
 }
 
 @Component({
+  standalone:false,
   template: `
 <span style="color: hotpink;">
   {{data}} Pizza party!!! 🍕

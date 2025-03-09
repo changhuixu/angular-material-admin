@@ -1,8 +1,42 @@
-@import 'src/scss/variables';
+@use 'src/scss/variables' as *;
 .location-icon {
   color: $primary-color;
 }
 
+:host{
+  display: flex;
+      flex-direction: column;
+      gap: 22px;
+}
 
 
+/* Replace fxLayout="row wrap" */
+.stat-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px; // Similar to fxLayoutGap
+}
 
+.stat-box {
+  width: calc(25% - 10px); // Similar to fxFlex="24"
+}
+
+@media (max-width: 600px) {
+  .stat-box {
+    width: 100%; // Similar to fxFlex.xs="column"
+  }
+}
+
+/* Replace fxLayout="row" */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; // Similar to fxLayoutGap="20px"
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

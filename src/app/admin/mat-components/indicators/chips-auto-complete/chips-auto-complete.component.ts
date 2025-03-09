@@ -8,6 +8,7 @@ import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-chips-auto-complete',
+  standalone:false,
   templateUrl: './chips-auto-complete.component.html',
   styleUrls: ['./chips-auto-complete.component.scss']
 })

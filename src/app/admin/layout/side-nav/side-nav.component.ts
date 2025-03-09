@@ -3,6 +3,7 @@ import { childRoutes } from '../../child-routes';
 
 @Component({
   selector: 'app-side-nav',
+  standalone:false,
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.scss']
 })

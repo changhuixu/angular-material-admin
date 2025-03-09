@@ -1,4 +1,4 @@
-@import 'src/scss/variables';
+@use 'src/scss/variables' as *;
 
 :host {
   display: block;

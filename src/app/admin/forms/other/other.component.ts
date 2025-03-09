@@ -8,6 +8,7 @@ import {
 
 @Component({
   selector: 'app-other',
+  standalone:false,
   templateUrl: './other.component.html',
   styleUrls: ['./other.component.scss']
 })

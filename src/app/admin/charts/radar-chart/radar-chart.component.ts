@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-radar-chart',
+  standalone:true,
+imports:[MatCardModule,  BaseChartDirective],
   templateUrl: './radar-chart.component.html',
   styleUrls: ['./radar-chart.component.scss']
 })

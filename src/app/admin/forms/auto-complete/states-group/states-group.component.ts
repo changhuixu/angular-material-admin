@@ -15,6 +15,7 @@ export const _filter = (opt: string[], value: string): string[] => {
 
 @Component({
   selector: 'app-states-group',
+  standalone:false,
   templateUrl: './states-group.component.html',
   styleUrls: ['./states-group.component.scss']
 })

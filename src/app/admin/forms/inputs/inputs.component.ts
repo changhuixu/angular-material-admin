@@ -24,6 +24,7 @@ class MyErrorStateMatcher implements ErrorStateMatcher {
 
 @Component({
   selector: 'app-inputs',
+  standalone:false,
   templateUrl: './inputs.component.html',
   styleUrls: ['./inputs.component.scss']
 })

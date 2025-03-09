@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AuthGuard } from './core/auth.guard';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
@@ -21,8 +20,4 @@ const routes: Routes = [
   },
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
+
